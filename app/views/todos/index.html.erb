@@ -9,6 +9,7 @@
     <p> Completed? : <%= ele.completed %> </p>
     <p> <%= link_to 'Show Task', ele  %> </p>
     <p> <%= link_to 'Delete Task', ele, method: :delete %> </p>
+    <p> <%= link_to 'Completado', complete_path(ele) %> </p>
 
     <br>
   <% end  %>
