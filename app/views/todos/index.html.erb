@@ -1,0 +1,16 @@
+
+<div class="well">
+
+<%= link_to 'Create Task', todos_new_path %>
+<br>
+<br>
+  <% @todos.each do |ele| %>
+    <h3> Task Description: <%= ele.description %> </h3>
+    <p> Completed? : <%= ele.completed %> </p>
+    <p> <%= link_to 'Show Task', ele  %> </p>
+    <p> <%= link_to 'Delete Task', ele, method: :delete %> </p>
+
+    <br>
+  <% end  %>
+
+</div>
