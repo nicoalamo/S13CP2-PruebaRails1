@@ -10,26 +10,26 @@
 
   <% @todos.each do |ele| %>
 
-  <div class="well tasks">
+  <div class="well tasks container">
 
       <div class="row">
 
-          <div class="col-md-8">
-            <h2> <%= ele.description %> </h2>
-            <p> Completed? : <%= ele.completed.to_s %> </p>
+          <div class="col-md-10">
+            <div class="container">
+
+              <h2> ToDo #<%= ele.id %> </h2>
+              <h3> <%= ele.description %> </h3>
+              <p> Completed? : <%= ele.completed.to_s %> </p>
+            </div>
+
           </div>
 
-          <div class="col-md-1">
+          <div class="col-md-2">
             <p> <%= link_to 'Completed', complete_path(ele), class:"btn btn-warning" %> </p>
-          </div>
-
-          <div class="col-md-1">
             <p> <%= link_to 'Show Task', ele, class:"btn btn-primary"  %> </p>
-          </div>
-
-          <div class="col-md-1">
             <p> <%= link_to 'Delete Task', ele, method: :delete, class:"btn btn-danger" %> </p>
           </div>
+
 
 
         <br>
