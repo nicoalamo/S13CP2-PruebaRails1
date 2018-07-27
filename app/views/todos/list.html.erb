@@ -1,35 +1,80 @@
+
+<div class="container">
+
 <div class="row">
 
   <div class="col-md-6">
 
-    <% @todos.each do |ele| %>
+    <table class="table table-striped panel panel-primary">
 
-      <% if ele.completed %>
-        <h3> <%= ele.id %> </h3>
-        <h4> <%= ele.description %> </h4>
-        <p> <%= ele.completed %> </p>
-        <br>
-        <br>
+      <thead>
+        <tr>
+          <th colspan="2" class= "text-center"> <h2 class="list_title_blue"> Completed Tasks </h2> </th>
+        </tr>
+        <tr>
+          <th> <h3> ID </h3> </th>
+          <th> <h3> Description </h3> </th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% @todos.each do |ele| %>
+
+        <tr>
+
+        <% if ele.completed %>
+
+          <td> <h3> <%= ele.id %> </h3> </td>
+          <td> <h4> <%= ele.description %> </h4> </td>
+        </tr>
+
       <% end  %>
 
     <% end  %>
+
+      </tbody>
+
+    </table>
 
   </div>
 
   <div class="col-md-6">
 
-    <% @todos.each do |ele| %>
+    <table class="table table-striped panel panel-primary">
 
-      <% if !(ele.completed) %>
-        <h3> <%= ele.id %> </h3>
-        <h4> <%= ele.description %> </h4>
-        <p> <%= ele.completed %> </p>
-        <br>
-        <br>
+      <thead>
+        <tr>
+          <th colspan="2" class= "text-center"> <h2 class="list_title_red"> Not Completed Tasks</h2> </th>
+        </tr>
+        <tr>
+          <th> <h3> ID </h3> </th>
+          <th> <h3> Description </h3> </th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% @todos.each do |ele| %>
+
+        <tr>
+
+        <% if !(ele.completed) %>
+
+          <td> <h3> <%= ele.id %> </h3> </td>
+          <td> <h4> <%= ele.description %> </h4> </td>
+        </tr>
+
       <% end  %>
 
     <% end  %>
 
+      </tbody>
+
+    </table>
+
   </div>
+
+</div>
 
 </div>

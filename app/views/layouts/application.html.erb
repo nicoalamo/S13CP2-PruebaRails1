@@ -18,8 +18,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style = "background-color:lightgrey">
     <%= render 'todos/navbar' %>
     <%= yield %>
+    <%= render 'todos/footer' %>
+
   </body>
 </html>

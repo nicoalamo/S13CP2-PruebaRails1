@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+.tasks {
+  border: solid 1px blue;
+  background-color: #e0f2f1;
+}
+
+.list_title_blue {
+  color: blue;
+}
+.list_title_red {
+  color: red;
+}
+
+.my_footer{
+  background-color: #f9a825;
+
+
+}

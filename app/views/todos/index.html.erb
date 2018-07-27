@@ -1,17 +1,40 @@
 
-<div class="well">
 
-<%= link_to 'Create Task', todos_new_path %>
-<br>
-<br>
-  <% @todos.each do |ele| %>
-    <h3> Task Description: <%= ele.description %> </h3>
-    <p> Completed? : <%= ele.completed %> </p>
-    <p> <%= link_to 'Show Task', ele  %> </p>
-    <p> <%= link_to 'Delete Task', ele, method: :delete %> </p>
-    <p> <%= link_to 'Completado', complete_path(ele) %> </p>
-
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 text-center">
+    <%= link_to 'Create Task', todos_new_path, class:"btn btn-lg btn-success"  %>
     <br>
-  <% end  %>
-
+    <br>
+  </div>
 </div>
+
+  <% @todos.each do |ele| %>
+
+  <div class="well tasks">
+
+      <div class="row">
+
+          <div class="col-md-8">
+            <h2> <%= ele.description %> </h2>
+            <p> Completed? : <%= ele.completed.to_s %> </p>
+          </div>
+
+          <div class="col-md-1">
+            <p> <%= link_to 'Completed', complete_path(ele), class:"btn btn-warning" %> </p>
+          </div>
+
+          <div class="col-md-1">
+            <p> <%= link_to 'Show Task', ele, class:"btn btn-primary"  %> </p>
+          </div>
+
+          <div class="col-md-1">
+            <p> <%= link_to 'Delete Task', ele, method: :delete, class:"btn btn-danger" %> </p>
+          </div>
+
+
+        <br>
+
+      </div>
+  </div>
+
+  <% end  %>

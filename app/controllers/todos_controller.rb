@@ -35,7 +35,7 @@ class TodosController < ApplicationController
 
   def complete
     @todo = Todo.find(params[:id])
-    @todo.completed = true
+    @todo.completed = !@todo.completed
     @todo.save
     redirect_to todos_path
   end
@@ -46,7 +46,7 @@ class TodosController < ApplicationController
 
   private
   def todo_params
-    params.require(:todo).permit(:description)
+    params.require(:todo).permit(:description, :completed)
   end
 
 
